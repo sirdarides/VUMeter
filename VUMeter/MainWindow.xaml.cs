@@ -43,48 +43,55 @@ namespace VUMeter
 
         void timer_Tick(object sender, EventArgs e)
         {
-            double value = device.AudioMeterInformation.PeakValues[0] * 100;
-            if (left.Count == 10)
-                left.RemoveAt(0);
-            left.Add((float)value);
-            double leftaverage = left.Average();
-
-            value = device.AudioMeterInformation.PeakValues[1] * 100;
-            if (right.Count == 10)
-                right.RemoveAt(0);
-            right.Add((float)value);
-            double rightaverage = right.Average();
-
-            if (leftaverage > rightaverage)
+            try
             {
-                if (leftaverage > lblMax)
+                double value = device.AudioMeterInformation.PeakValues[0] * 100;
+                if (left.Count == 10)
+                    left.RemoveAt(0);
+                left.Add((float)value);
+                double leftaverage = left.Average();
+
+                value = device.AudioMeterInformation.PeakValues[1] * 100;
+                if (right.Count == 10)
+                    right.RemoveAt(0);
+                right.Add((float)value);
+                double rightaverage = right.Average();
+
+                if (leftaverage > rightaverage)
                 {
-                    float interval;
-                    float max;
-                    interval = (float)Math.Ceiling(leftaverage / 4);
-                    max = interval * 4;
-                    lblMax = max;
-                    LeftChannelVU.MoveMaxNeddle((lblMax));
+                    if (leftaverage > lblMax)
+                    {
+                        float interval;
+                        float max;
+                        interval = (float)Math.Ceiling(leftaverage / 4);
+                        max = interval * 4;
+                        lblMax = max;
+                        LeftChannelVU.MoveMaxNeddle((lblMax));
+                    }
                 }
+                else
+                {
+                    if (rightaverage > lblMax)
+                    {
+                        float interval;
+                        float max;
+                        interval = (float)Math.Ceiling(rightaverage / 4);
+                        max = interval * 4;
+                        lblMax = max;
+                        RightChannelVU.MoveMaxNeddle((lblMax));
+                    }
+                }
+
+                LeftChannelValue = (float)(leftaverage / (lblMax / 100));
+                RightChannelValue = (float)(rightaverage / (lblMax / 100));
+
+                LeftChannelVU.MoveVolumeNeddle(LeftChannelValue);
+                RightChannelVU.MoveVolumeNeddle(RightChannelValue);
             }
-            else
+            catch
             {
-                if (rightaverage > lblMax)
-                {
-                    float interval;
-                    float max;
-                    interval = (float)Math.Ceiling(rightaverage / 4);
-                    max = interval * 4;
-                    lblMax = max;
-                    RightChannelVU.MoveMaxNeddle((lblMax));
-                }
+
             }
-
-            LeftChannelValue = (float)(leftaverage / (lblMax / 100));
-            RightChannelValue = (float)(rightaverage / (lblMax / 100));
-
-            LeftChannelVU.MoveVolumeNeddle(LeftChannelValue);
-            RightChannelVU.MoveVolumeNeddle(RightChannelValue);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
