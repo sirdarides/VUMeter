@@ -1,0 +1,44 @@
+﻿<Window x:Class="VUMeter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VUMeter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="270" Width="880" Loaded="Window_Loaded"
+        Background="#FF383838" WindowStyle="None" MouseDown="Window_MouseDown" ResizeMode="CanResize" Icon="Images/VU Meter icon_full.ico">
+    <Viewbox>
+        <Grid>
+            <!--<Image Name="BackgroundImage" Source="Images/Brushed_Aluminum_Laminate_NuMetal -Horizontal.jpg" Stretch="None" Width="900" Height="230"/>
+             <Image Name="LeftDownPartImage" Source="Images/VU_Meter-bottom-2.jpg" Width="200" HorizontalAlignment="Left"/>
+        <Image Name="RightDownPartImage" Source="Images/VU_Meter-bottom-2.jpg" Width="200" HorizontalAlignment="Right"/>
+            <ProgressBar Name="LeftChannel" HorizontalAlignment="Left" Height="18" Margin="10,74,0,0" Minimum="0" Maximum="100" VerticalAlignment="Top" Width="138" Value="0"/>
+            <ProgressBar Name="RightChannel" HorizontalAlignment="Left" Height="18" Margin="329,74,0,0" Minimum="0" Maximum="100"  VerticalAlignment="Top" Width="131" Value="0"/>
+            <Label x:Name="lblMax" Content="0" HorizontalAlignment="Left" Height="24" Margin="25,29,0,0" VerticalAlignment="Top" Width="87"/>
+            <Label x:Name="LeftChannelLbl" Content="0" HorizontalAlignment="Left" Height="24" Margin="153,68,0,0" VerticalAlignment="Top" Width="42"/>
+            <Label x:Name="RightChannelLbl" Content="0" HorizontalAlignment="Left" Height="24" Margin="465,68,0,0" VerticalAlignment="Top" Width="42"/>-->
+
+            <WrapPanel VerticalAlignment="Center" Margin="5,5,5,5">
+                <!--<Border Height="230" Margin="0,0,10,0"
+                        BorderBrush="Black" BorderThickness="3"
+                        VerticalAlignment="Top" HorizontalAlignment="Left"
+                        Width="450" CornerRadius="3,3,3,3">
+                    <Border.BitmapEffect>
+                        <EmbossBitmapEffect Relief="0.655" LightAngle="50" />
+                    </Border.BitmapEffect>-->
+                    <local:VU_Flat x:Name="LeftChannelVU" Width="430" Height="210" Margin="0,0,10,0">
+                        <!--<local:VU_Flat.Effect>
+                            <DropShadowEffect ShadowDepth="8"/>
+                        </local:VU_Flat.Effect>-->
+                    </local:VU_Flat>
+                <!--</Border>-->
+                <local:VU_Flat x:Name="RightChannelVU" Width="430" Height="210" Margin="0,0,5,0">
+                    <!--<local:VU_Flat.Effect>
+                        <DropShadowEffect ShadowDepth="8"/>
+                    </local:VU_Flat.Effect>-->
+                </local:VU_Flat>
+            </WrapPanel>
+            <Image Name="ExitImage" Width="20" Height="20" Source="Images/exit-icon.png" Margin="844,187,21,13" MouseUp="ExitImage_MouseUp" />
+        </Grid>
+    </Viewbox>
+</Window>
