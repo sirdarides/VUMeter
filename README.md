@@ -3,7 +3,7 @@ Vintage VU Meter
 
 ![GitHub Logo](vumeter.jpg)
 
-Gray-White niddle shows the volume.
+Gray niddle shows the volume.
 
 Red niddle shows the max point, when the sound is muted or no sound returns back to 0.
 
