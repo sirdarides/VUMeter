@@ -39,7 +39,7 @@ namespace VUMeter
             {
                 VolumeMaxValue = Volume;
             }
-            if (Volume == 0)
+            if (Volume < 0.001)
             {
                 VolumeMaxValue = 0;
                 /*

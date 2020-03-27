@@ -85,13 +85,14 @@ namespace VUMeter
                 LeftChannelValue = (float)(leftaverage / (lblMax / 100));
                 RightChannelValue = (float)(rightaverage / (lblMax / 100));
 
-                LeftChannelVU.MoveVolumeNeddle(LeftChannelValue);
-                RightChannelVU.MoveVolumeNeddle(RightChannelValue);
             }
             catch
             {
-
+                LeftChannelValue = 0;
+                RightChannelValue = 0;
             }
+            LeftChannelVU.MoveVolumeNeddle(LeftChannelValue);
+            RightChannelVU.MoveVolumeNeddle(RightChannelValue);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
