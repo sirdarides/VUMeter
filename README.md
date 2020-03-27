@@ -1,6 +1,8 @@
 # VUMeter
 Vintage VU Meter
 
+![GitHub Logo](vumeter.jpg)
+
 do not forget to copy CoreAudioApi.dll in the bin folder.  Remember this file should be with the VUMeter.exe file.  
 
 Only these two files are enough to run ...
