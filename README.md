@@ -9,7 +9,7 @@ Red niddle shows the max point, when the sound is muted or no sound returns back
 
 Left-Click & Drag everywhere in the window and drag it.
 
-Resize it
+You can Resize it as you do with all windows.
 
 When you change audio output source the default audio changes.  Right-Click everywhere in the window to get the new default audio output source.
 
