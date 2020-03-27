@@ -7,7 +7,7 @@ Gray-White niddle shows the volume.
 
 Red niddle shows the max point, when the sound is muted or no sound returns back to 0.
 
-Left-Click & Drag everywhere in the window and drag it.
+Left-Click everywhere in the window and drag it.
 
 You can Resize it as you do with all windows.
 
