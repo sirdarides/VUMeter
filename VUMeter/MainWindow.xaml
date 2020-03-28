@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VUMeter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="270" Width="880" Loaded="Window_Loaded"
+        Title="MainWindow" Height="240" Width="860" Loaded="Window_Loaded"
         Background="#FF383838" WindowStyle="None" MouseDown="Window_MouseDown" ResizeMode="CanResize" Icon="Images/VU Meter icon_full.ico">
-    <Viewbox>
+    <!--  Remove white upper stripe -->
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0,0,0,1" CornerRadius="0" />
+    </WindowChrome.WindowChrome>
+    <Viewbox Stretch="Fill">
         <Grid>
             <!--<Image Name="BackgroundImage" Source="Images/Brushed_Aluminum_Laminate_NuMetal -Horizontal.jpg" Stretch="None" Width="900" Height="230"/>
              <Image Name="LeftDownPartImage" Source="Images/VU_Meter-bottom-2.jpg" Width="200" HorizontalAlignment="Left"/>
@@ -18,7 +22,7 @@
             <Label x:Name="LeftChannelLbl" Content="0" HorizontalAlignment="Left" Height="24" Margin="153,68,0,0" VerticalAlignment="Top" Width="42"/>
             <Label x:Name="RightChannelLbl" Content="0" HorizontalAlignment="Left" Height="24" Margin="465,68,0,0" VerticalAlignment="Top" Width="42"/>-->
 
-            <WrapPanel VerticalAlignment="Center" Margin="5,5,5,5">
+            <WrapPanel VerticalAlignment="Center" Margin="10,10,10,10">
                 <!--<Border Height="230" Margin="0,0,10,0"
                         BorderBrush="Black" BorderThickness="3"
                         VerticalAlignment="Top" HorizontalAlignment="Left"
@@ -26,7 +30,7 @@
                     <Border.BitmapEffect>
                         <EmbossBitmapEffect Relief="0.655" LightAngle="50" />
                     </Border.BitmapEffect>-->
-                    <local:VU_Flat x:Name="LeftChannelVU" Width="430" Height="210" Margin="0,0,10,0">
+                    <local:VU_Flat x:Name="LeftChannelVU" Width="430" Height="210" Margin="5,0,10,0">
                         <!--<local:VU_Flat.Effect>
                             <DropShadowEffect ShadowDepth="8"/>
                         </local:VU_Flat.Effect>-->
