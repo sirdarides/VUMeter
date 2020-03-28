@@ -1,7 +1,7 @@
 # VUMeter
 Vintage VU Meter
 
-![GitHub Logo](vumeter.jpg)
+![GitHub Logo](VUMeter.JPG)
 
 Gray niddle shows the volume.
 
